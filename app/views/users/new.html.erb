@@ -1,0 +1,34 @@
+<h1>New User Sign up</h1>
+
+<%#<form action="/users" method="POST" class="form-example" accept-charset="UTF-8">
+<%# <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %><%#" /> %>
+<%#
+  <div class="form-example">
+    <label for="username">Enter your user name: </label>
+    <input type="text" name="user[username]" id="username" required>
+  </div>
+  <div class="form-example">
+    <label for="email">Enter your email: </label>
+    <input type="email" name="user[email]" id="email" required>
+  </div>
+  <div class="form-example">
+    <label for="password">Enter your password: </label>
+    <input type="password" name="user[password]" id="password" required>
+  </div>
+  <div class="form-example">
+    <input type="submit" value="Subscribe!">
+  </div>
+</form>%>
+
+<%= form_with(url: "/users", method: "POST") do %>
+  <%= label_tag(:username, "Enter your username: ") %>
+  <%= text_field_tag(:username) %>
+  <br/>
+  <%= label_tag(:email, "Enter your email: ") %>
+  <%= email_field_tag(:email) %>
+  <br/>
+  <%= label_tag(:password, "Enter your password: ") %>
+  <%= password_field_tag(:password) %>
+  <br/>
+  <%= submit_tag("Submit") %>
+<% end %>
